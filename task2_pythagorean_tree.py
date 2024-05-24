@@ -1,7 +1,7 @@
 import turtle
 import math
 
-def draw_pythagoras_tree(t, depth, height):
+def draw_pythagorean_tree(t, depth, height):
     if depth == 0:
         return
     
@@ -14,14 +14,14 @@ def draw_pythagoras_tree(t, depth, height):
     
     #draw first subtree
     t.forward(new_height)
-    draw_pythagoras_tree(t, depth - 1, new_height)
+    draw_pythagorean_tree(t, depth - 1, new_height)
     
     #move back to square and prepare to draw other subtree
     t.backward(new_height)
     t.right(90)
     t.forward(new_height)
     
-    draw_pythagoras_tree(t, depth - 1, new_height)
+    draw_pythagorean_tree(t, depth - 1, new_height)
     
     #back to original pos
     t.backward(new_height)
@@ -45,7 +45,7 @@ def draw(depth):
     t.right(-90)
     t.pendown()
 
-    draw_pythagoras_tree(t, depth, height)
+    draw_pythagorean_tree(t, depth, height)
     
     window.mainloop()
 
