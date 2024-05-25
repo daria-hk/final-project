@@ -39,13 +39,6 @@ class LinkedList:
             cur = next
         self.head = prev
 
-
-    def print_list(self):
-        cur = self.head
-        while cur:
-            print(cur.data)
-            cur = cur.next
-
     def insertion_sort(self):
         
         sorted_head = None
@@ -68,7 +61,7 @@ class LinkedList:
 
         self.head = sorted_head
 
-    def merge_sorted_lists(self, ll1, ll2):
+    def merge_lists(self, ll1, ll2):
         dummy_n = Node()
         elem = dummy_n
 
@@ -90,16 +83,18 @@ class LinkedList:
             elem = elem.next
 
         self.head = dummy_n.next
-            
 
-
-
+    def print_list(self):
+        cur = self.head
+        while cur:
+            print(cur.data)
+            cur = cur.next        
 
 llist = LinkedList()
 llist2 = LinkedList()
 llist3 = LinkedList()
 
-#add nodes at the beginning
+#додаємо вузли на початок 
 llist.insert_at_beginning(5)
 llist.insert_at_beginning(15)
 llist.insert_at_beginning(10)
@@ -121,6 +116,6 @@ llist.insertion_sort()
 print("Sorted linked list:")
 llist.print_list()
 
-llist3.merge_sorted_lists(llist.head, llist2.head)
+llist3.merge_lists(llist.head, llist2.head)
 print("Merged linked list:")
 llist3.print_list()

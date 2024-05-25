@@ -12,18 +12,18 @@ def draw_pythagorean_tree(t, depth, height):
     
     new_height = height * math.sqrt(2) / 2
     
-    #draw first subtree
+    #виведи перше піддерево
     t.forward(new_height)
     draw_pythagorean_tree(t, depth - 1, new_height)
     
-    #move back to square and prepare to draw other subtree
+    #поверніться до квадрата та підготуйтеся до малювання іншого піддерева
     t.backward(new_height)
     t.right(90)
     t.forward(new_height)
     
     draw_pythagorean_tree(t, depth - 1, new_height)
     
-    #back to original pos
+    #назад до оригінальної позиції
     t.backward(new_height)
     t.left(45)
     t.backward(height)
@@ -49,4 +49,4 @@ def draw(depth):
     
     window.mainloop()
 
-draw(6) #change range
+draw(6) #тут можна змінити range
